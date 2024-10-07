@@ -2,7 +2,7 @@
     angular-app:
       platform: linux/amd64
       container_name: angular-app
-      image: myacr121843.azurecr.io/optum-azure-capstone-angular-app:${IMAGE_TAG}
+      image: myacrasestudent20.azurecr.io/capstone/angular-app:${IMAGE_TAG}
       build: ./angular-app  
       ports:  
         - "4200:80"  
@@ -13,7 +13,7 @@
     express-server:  
       platform: linux/amd64
       container_name: express-server
-      image: myacr121843.azurecr.io/optum-azure-capstone-express-server:${IMAGE_TAG}
+      image: myacrasestudent20.azurecr.io/capstone/express-server:${IMAGE_TAG}
       build: ./express-server  
       ports:  
         - "3000:3000"  
@@ -27,7 +27,7 @@
     flask-api:
       platform: linux/amd64
       container_name: flask-api
-      image: myacr121843.azurecr.io/optum-azure-capstone-flask-api:${IMAGE_TAG}
+      image: myacrasestudent20.azurecr.io/capstone/flask-api:${IMAGE_TAG}
       build: ./flask-api  
       ports:  
         - "5000:5000"  
