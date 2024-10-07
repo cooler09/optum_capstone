@@ -15,7 +15,7 @@ const {
     AzureMonitorLogExporter
  } = require('@azure/monitor-opentelemetry-exporter');
 
- const connectionString = process.env["APPLICATIONINSIGHTS_CONNECTION_STRING"] || "InstrumentationKey=d5f7e6a0-2011-4613-8e7d-6afd8033962b;IngestionEndpoint=https://eastus-8.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus.livediagnostics.monitor.azure.com/;ApplicationId=ba70588a-4305-4433-a892-63c530176622";
+ const connectionString = process.env["APPLICATIONINSIGHTS_CONNECTION_STRING"] || "InstrumentationKey=7d7059ec-ff5b-4bf3-b3cc-477310e04d9a;IngestionEndpoint=https://eastus-8.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus.livediagnostics.monitor.azure.com/;ApplicationId=db295c40-60ce-4fcc-9b03-3dcefbd5be4c";
 
 // Create an instance of the Azure Monitor Trace Exporter
 const azureMonitorExporter = new AzureMonitorTraceExporter({
