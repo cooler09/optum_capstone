@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  private expressApiUrl = 'http://172.171.137.22:3000/api/grades'; // Adjust the URL as necessary
-  private flaskApiUrl = 'http://172.171.139.151:5000/api/generate'; // Adjust the URL as necessary
+  private expressApiUrl = 'http://172.212.118.232:3000/api/grades'; // Adjust the URL as necessary
+  private flaskApiUrl = 'http://172.212.119.136:5000/api/generate'; // Adjust the URL as necessary
 
   constructor(private http: HttpClient) {}
 
