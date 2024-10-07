@@ -9,8 +9,8 @@ images:
   newTag: 0.0.1
 - name: myacrasestudent20.azurecr.io/capstone/flask-api
   newTag: 0.0.1
-- name: myacrasestudent20.azurecr.io/capstone/sqlite-db
-  newTag: 0.0.1
+- name: nouchka/sqlite3
+  newTag: latest
 - name: myacrasestudent20.azurecr.io/capstone/angular-app
   newTag: 0.0.1
 apiVersion: kustomize.config.k8s.io/v1beta1
