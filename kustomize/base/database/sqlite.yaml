@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: sqlite-db
-        image: nouchka/sqlite3
+        image: myacrasestudent20.azurecr.io/capstone/sqlite-db
         volumeMounts:
         - name: sqlite-storage
           mountPath: /data
