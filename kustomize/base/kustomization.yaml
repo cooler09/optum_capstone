@@ -6,7 +6,7 @@ resources:
 
 images:
 - name: myacrasestudent20.azurecr.io/capstone/express-server
-  newTag: 0.0.4
+  newTag: 0.0.5
 - name: myacrasestudent20.azurecr.io/capstone/flask-api
   newTag: 0.0.1
 - name: nouchka/sqlite3
