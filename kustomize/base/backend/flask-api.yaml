@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-api
+  template:
+    metadata:
+      labels:
+        app: flask-api
+    spec:
+      containers:
+      - name: flask-api
+        image: myacr121843.azurecr.io/optum-azure-capstone-flask-api:latest
+        ports:
+        - containerPort: 5000
+        volumeMounts:
+        - name: sqlite-storage
+          mountPath: /data
+      volumes:
+      - name: sqlite-storage
+        emptyDir: {}
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-api-service
+spec:
+  selector:
+    app: flask-api
+  ports:
+  - protocol: TCP
+    port: 5000
+    targetPort: 5000
+  type: LoadBalancer

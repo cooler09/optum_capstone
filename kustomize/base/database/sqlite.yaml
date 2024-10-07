@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sqlite-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sqlite-db
+  template:
+    metadata:
+      labels:
+        app: sqlite-db
+    spec:
+      containers:
+      - name: sqlite-db
+        image: nouchka/sqlite3
+        volumeMounts:
+        - name: sqlite-storage
+          mountPath: /data
+      volumes:
+      - name: sqlite-storage
+        emptyDir: {}

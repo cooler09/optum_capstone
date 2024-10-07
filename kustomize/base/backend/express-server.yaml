@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: express-server
+  template:
+    metadata:
+      labels:
+        app: express-server
+    spec:
+      containers:
+      - name: express-server
+        image: myacr121843.azurecr.io/optum-azure-capstone-express-server:latest
+        ports:
+        - containerPort: 3000
+        volumeMounts:
+        - name: sqlite-storage
+          mountPath: /data
+      volumes:
+      - name: sqlite-storage
+        emptyDir: {}
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: express-server-service
+spec:
+  selector:
+    app: express-server
+  ports:
+  - protocol: TCP
+    port: 3000
+    targetPort: 3000
+  type: LoadBalancer
