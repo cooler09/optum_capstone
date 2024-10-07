@@ -1,0 +1,47 @@
+  services:  
+    angular-app:
+      platform: linux/amd64
+      container_name: angular-app
+      image: myacr121843.azurecr.io/optum-azure-capstone-angular-app:${IMAGE_TAG}
+      build: ./angular-app  
+      ports:  
+        - "4200:80"  
+      networks:  
+        - app-network  
+      restart: always 
+
+    express-server:  
+      platform: linux/amd64
+      container_name: express-server
+      image: myacr121843.azurecr.io/optum-azure-capstone-express-server:${IMAGE_TAG}
+      build: ./express-server  
+      ports:  
+        - "3000:3000"  
+      networks:  
+        - app-network  
+      depends_on:  
+        - flask-api  
+        - sqlite-db  
+      restart: always 
+
+    flask-api:
+      platform: linux/amd64
+      container_name: flask-api
+      image: myacr121843.azurecr.io/optum-azure-capstone-flask-api:${IMAGE_TAG}
+      build: ./flask-api  
+      ports:  
+        - "5000:5000"  
+      networks:  
+        - app-network  
+      restart: always 
+
+    sqlite-db:  
+      image: nouchka/sqlite3
+      volumes:  
+        - ./database:/data  
+      networks:  
+        - app-network  
+      restart: always  
+  networks:  
+    app-network:  
+      driver: bridge  
