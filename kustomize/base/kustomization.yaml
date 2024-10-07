@@ -4,11 +4,6 @@ resources:
 - database/
 - ingress/
 
-configMapGenerator:
-- literals:
-  - ASPNETCORE_ENVIRONMENT=Development
-  name: common-config
-
 images:
 - name: myacrasestudent20.azurecr.io/capstone/express-server:0.0.1
   newTag: 0.0.2
