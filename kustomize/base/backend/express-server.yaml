@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: express-server
-        image: myacr121843.azurecr.io/optum-azure-capstone-express-server:latest
+        image: myacrasestudent20.azurecr.io/capstone/express-server:0.0.1
         ports:
         - containerPort: 3000
         volumeMounts:
