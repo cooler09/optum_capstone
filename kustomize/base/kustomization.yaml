@@ -12,7 +12,7 @@ images:
 - name: nouchka/sqlite3
   newTag: latest
 - name: myacrasestudent20.azurecr.io/capstone/angular-app
-  newTag: 0.0.2
+  newTag: 0.0.3
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
